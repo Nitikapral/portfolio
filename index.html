@@ -1,0 +1,977 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <title>Nitika Pral — Frontend & React Developer</title>
+    <meta name="description"
+        content="Frontend & React Developer based in Delhi, India. Building fast, accessible and beautiful web experiences.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Fira+Code:wght@300..700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+
+<body>
+
+    <div class="cursor" id="cur"></div>
+    <div class="cursor-ring" id="ring"></div>
+
+    <div id="loader" role="status" aria-label="Loading portfolio">
+        <div class="loader-content">
+            <div class="code-block">
+                <div class="loader-line l1"><span class="comment">//</span> initializing portfolio</div>
+                <div class="loader-line l2">const dev = new Developer();</div>
+                <div class="loader-line l3"><span class="arrow">→</span> loading modules...</div>
+                <div class="loader-line l4">status: <span class="status">'ready'</span></div>
+            </div>
+            <div class="loader-bar-wrap">
+                <div class="loader-bar" id="lbar"></div>
+            </div>
+            <div class="loader-pct" id="lpct">0%</div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header id="hdr" role="banner">
+        <a href="#home" class="logo" aria-label="Nitika Pral – home">
+            <span class="logo-sym">&lt;</span>NP<span class="logo-sym">/&gt;</span>
+        </a>
+        <nav id="desknav" aria-label="Primary navigation">
+            <a href="#home" class="nav-link active" data-s="home">Home</a>
+            <a href="#about" class="nav-link" data-s="about">About</a>
+            <a href="#skills" class="nav-link" data-s="skills">Skills</a>
+            <a href="#experience" class="nav-link" data-s="experience">Experience</a>
+            <a href="#projects" class="nav-link" data-s="projects">Projects</a>
+            <a href="#contact" class="nav-link" data-s="contact">Contact</a>
+        </nav>
+        <div class="nav-ctrls">
+            <button class="nav-btn" id="themeBtn" title="Toggle Theme" aria-label="Toggle colour theme">
+                <i class="fas fa-sun"></i>
+            </button>
+            <button class="menu-btn" id="mBtn" aria-label="Open mobile menu" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Nav -->
+    <nav class="mobile-nav" id="mNav" aria-label="Mobile navigation" aria-hidden="true">
+        <a href="#home" class="nav-link" onclick="closeMNav()">Home</a>
+        <a href="#about" class="nav-link" onclick="closeMNav()">About</a>
+        <a href="#skills" class="nav-link" onclick="closeMNav()">Skills</a>
+        <a href="#experience" class="nav-link" onclick="closeMNav()">Experience</a>
+        <a href="#projects" class="nav-link" onclick="closeMNav()">Projects</a>
+        <a href="#contact" class="nav-link" onclick="closeMNav()">Contact</a>
+    </nav>
+
+    <main id="main-content">
+
+        <!-- ─── HERO ─── -->
+        <section id="home" aria-labelledby="hero-heading">
+            <div class="hero-bg" aria-hidden="true"></div>
+            <div class="hero-grid" aria-hidden="true"></div>
+
+            <!-- Floating particles -->
+            <div class="hero-particles" aria-hidden="true">
+                <span class="particle p1"></span>
+                <span class="particle p2"></span>
+                <span class="particle p3"></span>
+                <span class="particle p4"></span>
+                <span class="particle p5"></span>
+            </div>
+
+            <div class="hero-left">
+                <div class="hero-eyebrow">
+                    <span class="availability-dot" aria-hidden="true"></span>
+                    Available for work
+                </div>
+                <h1 id="hero-heading">
+                    <span class="h1-dim">Frontend</span><br>
+                    <span class="h1-acc" id="typewriter-target">&amp; React</span><br>
+                    <span class="h1-dim">Developer</span>
+                </h1>
+                <!-- NEW: Typewriter tagline -->
+                <p class="hero-tagline">
+                    <span class="tagline-prefix">I build </span>
+                    <span class="typewriter-words" aria-live="polite">
+                        <span class="tw-word active">blazing-fast UIs</span>
+                        <span class="tw-word">pixel-perfect layouts</span>
+                        <span class="tw-word">React experiences</span>
+                        <span class="tw-word">accessible products</span>
+                    </span>
+                </p>
+                <p class="hero-sub">
+                    Building exceptional digital experiences with modern technologies.
+                    Turning complex problems into elegant, performant solutions.
+                </p>
+                <div class="hero-btns">
+                    <a href="#projects" class="btn-prim" aria-label="View my projects">
+                        View Projects <i class="fas fa-code" aria-hidden="true"></i>
+                    </a>
+                    <a href="#contact" class="btn-sec" aria-label="Hire me or get in touch">
+                        Hire Me <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                    </a>
+                    <a href="./assets/image/Nitika_resume.pdf" class="btn-ghost" download aria-label="Download my resume">
+                        Résumé <i class="fas fa-download" aria-hidden="true"></i>
+                    </a>
+                </div>
+                <div class="hero-socials">
+                    <a href="https://github.com/Nitikapral" target="_blank" rel="noopener noreferrer" class="soc-link"
+                        aria-label="GitHub profile"><i class="fab fa-github" aria-hidden="true"></i></a>
+                    <a href="https://www.linkedin.com/in/nitika-pral-6a80a22a7/" target="_blank"
+                        rel="noopener noreferrer" class="soc-link" aria-label="LinkedIn profile"><i
+                            class="fab fa-linkedin-in" aria-hidden="true"></i></a>
+                    <a href="https://wa.me/919541614951?text=Hi%20Nitika,%20I%20visited%20your%20portfolio"
+                        target="_blank" rel="noopener noreferrer" class="soc-link" aria-label="WhatsApp"><i
+                            class="fab fa-whatsapp" aria-hidden="true"></i></a>
+                    <a href="mailto:nitika.pral@email.com" class="soc-link" aria-label="Send email"><i
+                            class="fas fa-envelope" aria-hidden="true"></i></a>
+                </div>
+            </div>
+
+            <div class="hero-right" aria-hidden="true">
+                <div class="hero-terminal">
+                    <div class="terminal-bar">
+                        <div class="t-dot r"></div>
+                        <div class="t-dot y"></div>
+                        <div class="t-dot g"></div>
+                        <div class="t-title">developer.js</div>
+                    </div>
+                    <div class="terminal-body">
+                        <div><span class="t-prompt">$ </span><span class="t-cmd">node developer.js</span></div>
+                        <div>&nbsp;</div>
+                        <div><span class="kw">const</span> <span class="vr">dev</span> <span class="op">=</span> <span
+                                class="br">{</span></div>
+                        <div>&nbsp;&nbsp;<span class="pr">name</span><span class="op">:</span> <span class="st">'Nitika
+                                Pral'</span><span class="op">,</span></div>
+                        <div>&nbsp;&nbsp;<span class="pr">role</span><span class="op">:</span> <span
+                                class="st">'Frontend &amp; React Dev'</span><span class="op">,</span></div>
+                        <div>&nbsp;&nbsp;<span class="pr">experience</span><span class="op">:</span> <span
+                                class="nm">2</span><span class="op">+</span><span class="nm">'yrs'</span><span
+                                class="op">,</span></div>
+                        <div>&nbsp;&nbsp;<span class="pr">skills</span><span class="op">:</span> <span
+                                class="br">[</span></div>
+                        <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="st">'React'</span><span class="op">,</span> <span
+                                class="st">'Redux'</span><span class="op">,</span></div>
+                        <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="st">'Next.js'</span><span class="op">,</span> <span
+                                class="st">'TypeScript'</span></div>
+                        <div>&nbsp;&nbsp;<span class="br">]</span><span class="op">,</span></div>
+                        <div>&nbsp;&nbsp;<span class="pr">passion</span><span class="op">:</span> <span
+                                class="st">'Crafting UIs'</span></div>
+                        <div><span class="br">}</span><span class="op">;</span></div>
+                        <div>&nbsp;</div>
+                        <div><span class="cm">// Ready to collaborate ✓</span></div>
+                        <div><span class="t-prompt">▸ </span><span class="t-caret"></span></div>
+                    </div>
+                </div>
+                <div class="hero-badges">
+                    <div class="h-badge">
+                        <i class="fab fa-react" aria-hidden="true"></i>
+                        <div class="h-badge-info">
+                            <div class="h-badge-name">React</div>
+                            <div class="h-badge-sub">Redux · Hooks · Router</div>
+                        </div>
+                    </div>
+                    <div class="h-badge">
+                        <i class="fab fa-js" aria-hidden="true"></i>
+                        <div class="h-badge-info">
+                            <div class="h-badge-name">JavaScript</div>
+                            <div class="h-badge-sub">ES6+ · TypeScript</div>
+                        </div>
+                    </div>
+                    <div class="h-badge">
+                        <i class="fas fa-layer-group" aria-hidden="true" style="color:var(--accent3)"></i>
+                        <div class="h-badge-info">
+                            <div class="h-badge-name">Next.js</div>
+                            <div class="h-badge-sub">SSR · SSG · ISR</div>
+                        </div>
+                    </div>
+                    <div class="h-badge">
+                        <i class="fab fa-css3-alt" aria-hidden="true" style="color:#38bdf8"></i>
+                        <div class="h-badge-info">
+                            <div class="h-badge-name">CSS / Tailwind</div>
+                            <div class="h-badge-sub">Bootstrap · Animations</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ─── ABOUT ─── -->
+        <section id="about" aria-labelledby="about-heading">
+            <div class="section-wrap">
+                <div class="sec-label">01 — About</div>
+                <div class="about-grid">
+                    <div>
+                        <h2 id="about-heading" class="sec-title reveal">Who I Am</h2>
+                        <p class="about-body reveal delay1">
+                            <small>Curiosity sparked it — a blank screen, a blinking cursor, and the start of building
+                                real-world apps.</small><br>
+                            Over the past <strong>2+ years</strong>, I've built products used by thousands of users,
+                            learning that code must be <strong>fast, scalable, and reliable</strong>.
+                            I focus on <strong>performance</strong>, <strong>clean architecture</strong>, and
+                            <strong>accessibility</strong> — because great products should work for everyone.
+                            <br><br>
+                            Today, I design and build <strong>simple, efficient, and thoughtfully crafted
+                                experiences</strong>, blending solid engineering with intuitive UX.
+                        </p>
+                        <div class="about-stats reveal delay2">
+                            <div class="stat-box">
+                                <span class="stat-n" data-count="2" data-suffix="+">0</span>
+                                <span class="stat-l">Years Experience</span>
+                            </div>
+                            <div class="stat-box">
+                                <span class="stat-n" data-count="10" data-suffix="+">0</span>
+                                <span class="stat-l">Core Skills</span>
+                            </div>
+                            <div class="stat-box">
+                                <span class="stat-n" data-count="15" data-suffix="+">0</span>
+                                <span class="stat-l">Projects Built</span>
+                            </div>
+                        </div>
+
+                        <!-- NEW: Journey milestones mini-timeline -->
+                        <div class="journey-milestones reveal delay3" aria-label="Career milestones">
+                            <div class="milestone">
+                                <span class="ms-year">2023</span>
+                                <span class="ms-text">Started as Frontend Trainee at Kreate Technologies</span>
+                            </div>
+                            <div class="milestone">
+                                <span class="ms-year">2024</span>
+                                <span class="ms-text">Promoted to Junior Frontend Developer · shipped 10+ React
+                                    apps</span>
+                            </div>
+                            <div class="milestone now">
+                                <span class="ms-year">Now</span>
+                                <span class="ms-text">Open to new opportunities · specialising in React &amp;
+                                    Next.js</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="about-code reveal delay2" aria-hidden="true">
+                        <div class="ac-line"><span class="ac-ln">01</span><span class="cm">// developer profile</span>
+                        </div>
+                        <div class="ac-line"><span class="ac-ln">02</span><span class="kw">const</span> <span
+                                class="vr">developer</span> <span class="op">=</span> <span class="br">{</span></div>
+                        <div class="ac-line"><span class="ac-ln">03</span>&nbsp;&nbsp;<span class="pr">name</span><span
+                                class="op">:</span> <span class="st">'Nitika Pral'</span><span class="op">,</span></div>
+                        <div class="ac-line"><span class="ac-ln">04</span>&nbsp;&nbsp;<span
+                                class="pr">location</span><span class="op">:</span> <span class="st">'Delhi,
+                                India'</span><span class="op">,</span></div>
+                        <div class="ac-line"><span class="ac-ln">05</span>&nbsp;&nbsp;<span
+                                class="pr">skills</span><span class="op">:</span> <span class="br">[</span></div>
+                        <div class="ac-line"><span class="ac-ln">06</span>&nbsp;&nbsp;&nbsp;&nbsp;<span
+                                class="st">'React'</span><span class="op">,</span> <span
+                                class="st">'JavaScript'</span><span class="op">,</span></div>
+                        <div class="ac-line"><span class="ac-ln">07</span>&nbsp;&nbsp;&nbsp;&nbsp;<span
+                                class="st">'TypeScript'</span><span class="op">,</span> <span
+                                class="st">'Next.js'</span><span class="op">,</span></div>
+                        <div class="ac-line"><span class="ac-ln">08</span>&nbsp;&nbsp;&nbsp;&nbsp;<span
+                                class="st">'Redux'</span><span class="op">,</span> <span class="st">'Tailwind'</span>
+                        </div>
+                        <div class="ac-line"><span class="ac-ln">09</span>&nbsp;&nbsp;<span class="br">]</span><span
+                                class="op">,</span></div>
+                        <div class="ac-line"><span class="ac-ln">10</span>&nbsp;&nbsp;<span
+                                class="pr">hobbies</span><span class="op">:</span> <span class="br">[</span><span
+                                class="st">'Reading'</span><span class="op">,</span> <span
+                                class="st">'Design'</span><span class="br">]</span><span class="op">,</span></div>
+                        <div class="ac-line"><span class="ac-ln">11</span>&nbsp;&nbsp;<span
+                                class="pr">available</span><span class="op">:</span> <span class="nm">true</span></div>
+                        <div class="ac-line"><span class="ac-ln">12</span><span class="br">}</span><span
+                                class="op">;</span></div>
+                        <div class="ac-line"><span class="ac-ln">13</span>&nbsp;</div>
+                        <div class="ac-line"><span class="ac-ln">14</span><span class="fn">console</span><span
+                                class="op">.</span><span class="fn">log</span><span class="br">(</span><span
+                                class="st">'Let\'s build something.'</span><span class="br">)</span><span
+                                class="op">;</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ─── SKILLS ─── -->
+        <section id="skills" aria-labelledby="skills-heading">
+            <div class="section-wrap">
+                <div class="sec-label">02 — Skills</div>
+                <h2 id="skills-heading" class="sec-title reveal">Technical Expertise</h2>
+                <p class="sec-desc reveal delay1">Focused on building fast, accessible, and SEO-friendly web
+                    experiences.</p>
+
+                <!-- NEW: Tech icon badges row -->
+                <div class="tech-icons reveal delay1" aria-label="Tech stack icons">
+                    <div class="tech-icon-item" title="React"><i class="fab fa-react"
+                            aria-hidden="true"></i><span>React</span></div>
+                    <div class="tech-icon-item" title="JavaScript"><i class="fab fa-js" aria-hidden="true"></i><span>JS
+                            ES6+</span></div>
+                    <div class="tech-icon-item" title="HTML5"><i class="fab fa-html5"
+                            aria-hidden="true"></i><span>HTML5</span></div>
+                    <div class="tech-icon-item" title="CSS3"><i class="fab fa-css3-alt"
+                            aria-hidden="true"></i><span>CSS3</span></div>
+                    <div class="tech-icon-item" title="Bootstrap"><i class="fab fa-bootstrap"
+                            aria-hidden="true"></i><span>Bootstrap</span></div>
+                   
+                    <div class="tech-icon-item ti-redux" title="Redux"><span class="redux-icon"
+                            aria-hidden="true">⊕</span><span>Redux</span></div>
+                    <div class="tech-icon-item ti-ts" title="TypeScript"><span class="ts-icon"
+                            aria-hidden="true">TS</span><span>TypeScript</span></div>
+                    <div class="tech-icon-item ti-git" title="Git"><i class="fab fa-git-alt"
+                            aria-hidden="true"></i><span>Git</span></div>
+                </div>
+
+                <div class="skills-grid">
+                    <!-- Frontend -->
+                    <div class="skill-cat reveal delay1" role="group" aria-label="Frontend skills">
+                        <div class="cat-head">Frontend</div>
+                        <div class="skill-row">
+                            <div class="sk-top"><span class="sk-name">React</span><span class="sk-pct"
+                                    data-pct="95">0%</span></div>
+                            <div class="sk-track">
+                                <div class="sk-fill" data-w="95"></div>
+                            </div>
+                        </div>
+                        <div class="skill-row">
+                            <div class="sk-top"><span class="sk-name">JavaScript (ES6+)</span><span class="sk-pct"
+                                    data-pct="95">0%</span></div>
+                            <div class="sk-track">
+                                <div class="sk-fill" data-w="95"></div>
+                            </div>
+                        </div>
+                        <div class="skill-row">
+                            <div class="sk-top"><span class="sk-name">TypeScript</span><span class="sk-pct"
+                                    data-pct="70">0%</span></div>
+                            <div class="sk-track">
+                                <div class="sk-fill" data-w="70"></div>
+                            </div>
+                        </div>
+                        <div class="skill-row">
+                            <div class="sk-top"><span class="sk-name">Next.js / Redux</span><span class="sk-pct"
+                                    data-pct="80">0%</span></div>
+                            <div class="sk-track">
+                                <div class="sk-fill" data-w="80"></div>
+                            </div>
+                        </div>
+                        <div class="skill-row">
+                            <div class="sk-top"><span class="sk-name">HTML5 / CSS3</span><span class="sk-pct"
+                                    data-pct="92">0%</span></div>
+                            <div class="sk-track">
+                                <div class="sk-fill" data-w="92"></div>
+                            </div>
+                        </div>
+                        <div class="skill-row">
+                            <div class="sk-top"><span class="sk-name">Tailwind / Bootstrap</span><span class="sk-pct"
+                                    data-pct="88">0%</span></div>
+                            <div class="sk-track">
+                                <div class="sk-fill" data-w="88"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Web Quality -->
+                    <div class="skill-cat reveal delay2" role="group" aria-label="Web quality skills">
+                        <div class="cat-head">Web Quality</div>
+                        <div class="skill-row">
+                            <div class="sk-top"><span class="sk-name">Accessibility (a11y)</span><span class="sk-pct"
+                                    data-pct="90">0%</span></div>
+                            <div class="sk-track">
+                                <div class="sk-fill blue" data-w="90"></div>
+                            </div>
+                        </div>
+                        <div class="skill-row">
+                            <div class="sk-top"><span class="sk-name">Performance Optimization</span><span
+                                    class="sk-pct" data-pct="92">0%</span></div>
+                            <div class="sk-track">
+                                <div class="sk-fill blue" data-w="92"></div>
+                            </div>
+                        </div>
+                        <div class="skill-row">
+                            <div class="sk-top"><span class="sk-name">SEO (Technical + On-Page)</span><span
+                                    class="sk-pct" data-pct="70">0%</span></div>
+                            <div class="sk-track">
+                                <div class="sk-fill blue" data-w="70"></div>
+                            </div>
+                        </div>
+                        <div class="skill-row">
+                            <div class="sk-top"><span class="sk-name">Core Web Vitals</span><span class="sk-pct"
+                                    data-pct="85">0%</span></div>
+                            <div class="sk-track">
+                                <div class="sk-fill blue" data-w="85"></div>
+                            </div>
+                        </div>
+                        <div class="skill-row">
+                            <div class="sk-top"><span class="sk-name">Responsive Design</span><span class="sk-pct"
+                                    data-pct="93">0%</span></div>
+                            <div class="sk-track">
+                                <div class="sk-fill blue" data-w="93"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tools -->
+                    <div class="skill-cat reveal delay3" role="group" aria-label="Tools & workflow">
+                        <div class="cat-head">Tools</div>
+                        <div class="skill-row">
+                            <div class="sk-top"><span class="sk-name">Git / GitHub</span><span class="sk-pct"
+                                    data-pct="95">0%</span></div>
+                            <div class="sk-track">
+                                <div class="sk-fill orange" data-w="95"></div>
+                            </div>
+                        </div>
+                        <div class="skill-row">
+                            <div class="sk-top"><span class="sk-name">Chrome DevTools</span><span class="sk-pct"
+                                    data-pct="92">0%</span></div>
+                            <div class="sk-track">
+                                <div class="sk-fill orange" data-w="92"></div>
+                            </div>
+                        </div>
+                        <div class="skill-row">
+                            <div class="sk-top"><span class="sk-name">Lighthouse / Web Vitals</span><span class="sk-pct"
+                                    data-pct="90">0%</span></div>
+                            <div class="sk-track">
+                                <div class="sk-fill orange" data-w="90"></div>
+                            </div>
+                        </div>
+                        <div class="skill-row">
+                            <div class="sk-top"><span class="sk-name">Webpack / Vite</span><span class="sk-pct"
+                                    data-pct="85">0%</span></div>
+                            <div class="sk-track">
+                                <div class="sk-fill orange" data-w="85"></div>
+                            </div>
+                        </div>
+                        <div class="skill-row">
+                            <div class="sk-top"><span class="sk-name">Figma / UI Design</span><span class="sk-pct"
+                                    data-pct="75">0%</span></div>
+                            <div class="sk-track">
+                                <div class="sk-fill orange" data-w="75"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ─── EXPERIENCE ─── -->
+        <section id="experience" aria-labelledby="exp-heading">
+            <div class="section-wrap">
+                <div class="sec-label">03 — Experience</div>
+                <h2 id="exp-heading" class="sec-title reveal">Work History</h2>
+                <p class="sec-desc reveal delay1">A journey through the code that shaped me.</p>
+
+                <div class="timeline" role="list">
+                    <div class="tl-item" role="listitem">
+                        <div class="tl-dot" style="background:var(--accent3); box-shadow: 0 0 12px var(--accent3)">
+                        </div>
+                        <div class="tl-year">2024 — Present</div>
+                        <div class="tl-role gradient-text">Junior Frontend Developer</div>
+                        <div class="tl-company"><i class="fas fa-circle" style="font-size:.5rem" aria-hidden="true"></i>
+                            Kreate Technologies</div>
+                        <p class="tl-desc">Building modern, scalable web applications with React, focusing on
+                            performance, clean architecture, and smooth user experiences.</p>
+                        <div class="tl-achievements">
+                            <div class="tl-ach">Developed responsive and accessible UI components for production apps
+                            </div>
+                            <div class="tl-ach">Implemented smooth animations and micro-interactions to enhance UX</div>
+                            <div class="tl-ach">Optimised performance using lazy loading and code splitting</div>
+                        </div>
+                        <div class="tl-tags">
+                            <span class="tag">React</span>
+                            <span class="tag">JavaScript</span>
+                            <span class="tag">TypeScript</span>
+                            <span class="tag">Redux</span>
+                            <span class="tag">Next.js</span>
+                            <span class="tag">Performance</span>
+                        </div>
+                    </div>
+
+                    <div class="tl-item" role="listitem">
+                        <div class="tl-dot" style="background:var(--accent2); box-shadow: 0 0 12px var(--accent2)">
+                        </div>
+                        <div class="tl-year">2023 — 2024</div>
+                        <div class="tl-role gradient-text">Frontend Trainee</div>
+                        <div class="tl-company"><i class="fas fa-circle" style="font-size:.5rem" aria-hidden="true"></i>
+                            Kreate Technologies</div>
+                        <p class="tl-desc">Started as a frontend trainee, learning core web technologies and building
+                            real-world projects while strengthening fundamentals in HTML, CSS, and JavaScript.</p>
+                        <div class="tl-achievements">
+                            <div class="tl-ach">Built multiple responsive websites and UI layouts</div>
+                            <div class="tl-ach">Learned modern frontend practices and development workflows</div>
+                        </div>
+                        <div class="tl-tags">
+                            <span class="tag">HTML</span>
+                            <span class="tag">CSS</span>
+                            <span class="tag">JavaScript</span>
+                            <span class="tag">Bootstrap</span>
+                            <span class="tag">UI/UX</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ─── PROJECTS ─── (NEW: Swiper carousel) -->
+        <section id="projects" aria-labelledby="projects-heading">
+    <div class="section-wrap">
+        <div class="sec-label">04 — Projects</div>
+        <h2 id="projects-heading" class="sec-title reveal">Selected Work</h2>
+        <p class="sec-desc reveal delay1">A few things I've built that I'm proud of.</p>
+
+        <div class="proj-filters reveal delay1" role="tablist" aria-label="Filter projects">
+            <button class="proj-filter active" data-filter="all" role="tab" aria-selected="true">All Works</button>
+            <button class="proj-filter" data-filter="react" role="tab" aria-selected="false">
+                <i class="fab fa-react" aria-hidden="true"></i> React Creations
+            </button>
+            <button class="proj-filter" data-filter="interactive" role="tab" aria-selected="false">Interactive UI</button>
+            <button class="proj-filter" data-filter="accessibility" role="tab" aria-selected="false">Accessibility</button>
+        </div>
+
+        <div class="swiper proj-swiper reveal delay2">
+            <div class="swiper-wrapper">
+
+                <div class="swiper-slide" data-category="all accessibility">
+                    <article class="proj-card" tabindex="0">
+                        <div class="proj-img proj-img--hci">
+                            <div class="proj-img-inner">
+                                <i class="fas fa-landmark proj-icon" aria-hidden="true"></i>
+                                <div class="proj-html-badge proj-react-badge">
+                                    <i class="fab fa-html5" aria-hidden="true"></i> Core FrontEnd
+                                </div>
+                            </div>
+                        </div>
+                        <div class="proj-body">
+                            <h3 class="proj-title">High Commission of India</h3>
+                            <p class="proj-desc">
+                                Official diplomatic website for the High Commission of India, built with
+                                HTML, CSS &amp; JavaScript — delivering accessible, standards-compliant
+                                government information to citizens and visitors.
+                            </p>
+                            <div class="proj-tags" aria-label="Technologies used">
+                                <span class="tag">HTML</span>
+                                <span class="tag">CSS</span>
+                                <span class="tag">JavaScript</span>
+                                <span class="tag accessibility-tag">
+                                    <i class="fas fa-universal-access" aria-hidden="true"></i> Accessibility
+                                </span>
+                            </div>
+                            <!-- <div class="proj-links">
+                                <span class="proj-link-btn disabled" aria-disabled="true">
+                                    Live Site <i class="fas fa-external-link-alt" aria-hidden="true"></i>
+                                </span>
+                            </div> -->
+                        </div>
+                    </article>
+                </div>
+
+                <div class="swiper-slide" data-category="all accessibility">
+                    <article class="proj-card" tabindex="0">
+                        <div class="proj-img proj-img--drip">
+                            <div class="proj-img-inner">
+                                <i class="fas fa-tint proj-icon" aria-hidden="true"></i>
+                                <div class="proj-react-badge">
+                                    <i class="fab fa-react" aria-hidden="true"></i> React
+                                </div>
+                            </div>
+                        </div>
+                        <div class="proj-body">
+                            <h3 class="proj-title">DRIP</h3>
+                            <p class="proj-desc">
+                                A government Website for the Dam Rehabilitation and Improvement Project,
+                                providing project details, progress updates, and resources with a fully
+                                accessible, responsive interface.
+                            </p>
+                            <div class="proj-tags" aria-label="Technologies used">
+                                <span class="tag">HTML</span>
+                                <span class="tag">Bootstrap</span>
+                                <span class="tag">React</span>
+                                <span class="tag accessibility-tag">
+                                    <i class="fas fa-universal-access" aria-hidden="true"></i> Accessibility
+                                </span>
+                            </div>
+                            <!-- <div class="proj-links">
+                                <span class="proj-link-btn disabled" aria-disabled="true">
+                                    Live Site <i class="fas fa-external-link-alt" aria-hidden="true"></i>
+                                </span>
+                            </div> -->
+                        </div>
+                    </article>
+                </div>
+
+                <div class="swiper-slide" data-category="all react accessibility">
+                    <article class="proj-card" tabindex="0">
+                        <div class="proj-img proj-img--ndsa">
+                            <div class="proj-img-inner">
+                                <i class="fas fa-shield-alt proj-icon" aria-hidden="true"></i>
+                                <div class="proj-react-badge">
+                                    <i class="fab fa-react" aria-hidden="true"></i> React
+                                </div>
+                            </div>
+                        </div>
+                        <div class="proj-body">
+                            <h3 class="proj-title">National Dam Safety Authority</h3>
+                            <p class="proj-desc">
+                                A government website providing dam safety information, regulations, and
+                                guidelines, developed with React for a responsive and user-friendly interface.
+                            </p>
+                            <div class="proj-tags" aria-label="Technologies used">
+                                <span class="tag">React</span>
+                                <span class="tag">HTML</span>
+                                <span class="tag">CSS / Bootstrap</span>
+                                <span class="tag accessibility-tag">
+                                    <i class="fas fa-universal-access" aria-hidden="true"></i> Accessibility
+                                </span>
+                            </div>
+                            <!-- <div class="proj-links">
+                                <span class="proj-link-btn disabled" aria-disabled="true">
+                                    Live Site <i class="fas fa-external-link-alt" aria-hidden="true"></i>
+                                </span>
+                            </div> -->
+                        </div>
+                    </article>
+                </div>
+
+                <div class="swiper-slide" data-category="all accessibility">
+                    <article class="proj-card" tabindex="0">
+                        <div class="proj-img proj-img--asiatic">
+                            <div class="proj-img-inner">
+                                <i class="fas fa-book-open proj-icon" aria-hidden="true"></i>
+                                <div class="proj-html-badge proj-react-badge">
+                                    <i class="fab fa-html5" aria-hidden="true"></i> Core Frontend
+                                </div>
+                            </div>
+                        </div>
+                        <div class="proj-body">
+                            <h3 class="proj-title">Asiatic Society</h3>
+                            <p class="proj-desc">
+                                Digital presence for the historic Asiatic Society — showcasing research,
+                                publications, and cultural heritage with a fully accessible,
+                                standards-compliant static website.
+                            </p>
+                            <div class="proj-tags" aria-label="Technologies used">
+                                <span class="tag">HTML</span>
+                                <span class="tag">CSS</span>
+                                <span class="tag">JavaScript</span>
+                                <span class="tag accessibility-tag">
+                                    <i class="fas fa-universal-access" aria-hidden="true"></i> Accessibility
+                                </span>
+                            </div>
+                            <!-- <div class="proj-links">
+                                <span class="proj-link-btn disabled" aria-disabled="true">
+                                    Live Site <i class="fas fa-external-link-alt" aria-hidden="true"></i>
+                                </span>
+                            </div> -->
+                        </div>
+                    </article>
+                </div>
+
+                <div class="swiper-slide" data-category="all">
+                    <article class="proj-card" tabindex="0">
+                        <div class="proj-img proj-img--hpsldc">
+                            <div class="proj-img-inner">
+                                <i class="fas fa-bolt proj-icon" aria-hidden="true"></i>
+                                <div class="proj-angular-badge proj-react-badge">
+                                    <i class="fab fa-angular" aria-hidden="true"></i> Angular
+                                </div>
+                            </div>
+                        </div>
+                        <div class="proj-body">
+                            <h3 class="proj-title">HPSLDC</h3>
+                            <p class="proj-desc">
+                                Official website for Himachal Pradesh State Load Dispatch Centre, built
+                                with Angular — featuring real-time grid data, regulatory information, and
+                                a robust enterprise-grade interface.
+                            </p>
+                            <div class="proj-tags" aria-label="Technologies used">
+                                <span class="tag">Angular</span>
+                                <span class="tag">JavaScript</span>
+                                <span class="tag">HTML</span>
+                                <span class="tag">CSS</span>
+                            </div>
+                            <!-- <div class="proj-links">
+                                <span class="proj-link-btn disabled" aria-disabled="true">
+                                    Live Site <i class="fas fa-external-link-alt" aria-hidden="true"></i>
+                                </span>
+                            </div> -->
+                        </div>
+                    </article>
+                </div>
+
+                <div class="swiper-slide" data-category="all interactive">
+                    <article class="proj-card" tabindex="0">
+                        <div class="proj-img proj-img--kreate">
+                            <div class="proj-img-inner">
+                                <i class="fas fa-globe-asia proj-icon" aria-hidden="true"></i>
+                                <div class="proj-html-badge proj-react-badge">
+                                    <i class="fab fa-html5" aria-hidden="true"></i> Core FrontEnd
+                                </div>
+                            </div>
+                        </div>
+                        <div class="proj-body">
+                            <h3 class="proj-title">Kreate Technologies</h3>
+                            <p class="proj-desc">
+                                Corporate website for Kreate Technologies' Middle East operations —
+                                showcasing IT services, solutions, and expertise with a fully animated,
+                                polished multi-region responsive design.
+                            </p>
+                            <div class="proj-tags">
+                                <span class="tag">HTML</span>
+                                <span class="tag">CSS</span>
+                                <span class="tag">JavaScript</span>
+                                <span class="tag">Animations</span>
+                            </div>
+                            <!-- <div class="proj-links">
+                                <span class="proj-link-btn disabled" aria-disabled="true">
+                                    Live Site <i class="fas fa-external-link-alt"></i>
+                                </span>
+                            </div> -->
+                        </div>
+                    </article>
+                </div>
+
+                <div class="swiper-slide" data-category="all">
+                    <article class="proj-card" tabindex="0">
+                        <div class="proj-img proj-img--smartech">
+                            <div class="proj-img-inner">
+                                <i class="fas fa-microchip proj-icon"></i>
+                                <div class="proj-html-badge proj-react-badge">
+                                    <i class="fab fa-html5"></i> Core Frontend
+                                </div>
+                            </div>
+                        </div>
+                        <div class="proj-body">
+                            <h3 class="proj-title">Smartech Website</h3>
+                            <p class="proj-desc">
+                                A sleek technology-company website for Smartech — featuring service
+                                showcases, product highlights, and a clean modern layout built with
+                                HTML, CSS &amp; JavaScript.
+                            </p>
+                            <div class="proj-tags">
+                                <span class="tag">HTML</span>
+                                <span class="tag">CSS</span>
+                                <span class="tag">JavaScript</span>
+                            </div>
+                            <!-- <div class="proj-links">
+                                <span class="proj-link-btn disabled" aria-disabled="true">
+                                    Live Site <i class="fas fa-external-link-alt"></i>
+                                </span>
+                            </div> -->
+                        </div>
+                    </article>
+                </div>
+
+                <div class="swiper-slide" data-category="all react accessibility">
+                    <article class="proj-card" tabindex="0">
+                        <div class="proj-img proj-img--mittal">
+                            <div class="proj-img-inner">
+                                <i class="fas fa-leaf proj-icon"></i>
+                                <div class="proj-react-badge">
+                                    <i class="fab fa-react"></i> React
+                                </div>
+                            </div>
+                        </div>
+                        <div class="proj-body">
+                            <h3 class="proj-title">Mittal Green Energy</h3>
+                            <p class="proj-desc">
+                                A React-based website for Mittal Green Energy showcasing renewable energy
+                                solutions, services, and company information with a responsive and
+                                interactive user interface.
+                            </p>
+                            <div class="proj-tags">
+                                <span class="tag">React</span>
+                                <span class="tag">HTML</span>
+                                <span class="tag">CSS / Bootstrap</span>
+                                <span class="tag accessibility-tag">
+                                    <i class="fas fa-universal-access"></i> Accessibility
+                                </span>
+                            </div>
+                            <!-- <div class="proj-links">
+                                <span class="proj-link-btn disabled" aria-disabled="true">
+                                    Live Site <i class="fas fa-external-link-alt"></i>
+                                </span>
+                            </div> -->
+                        </div>
+                    </article>
+                </div>
+
+                <div class="swiper-slide" data-category="all">
+                    <article class="proj-card" tabindex="0">
+                        <div class="proj-img proj-img--hrms">
+                            <div class="proj-img-inner">
+                                <i class="fas fa-users-cog proj-icon"></i>
+                               <div class="proj-angular-badge">
+                                    <i class="fab fa-angular" aria-hidden="true"></i> Angular
+                                </div>
+                            </div>
+                        </div>
+                        <div class="proj-body">
+                            <h3 class="proj-title">HRMS</h3>
+                            <p class="proj-desc">
+                                A Human Resource Management System portal — enabling employee management,
+                                attendance tracking, leave workflows, and HR reporting in a clean
+                                dashboard layout.
+                            </p>
+                            <div class="proj-tags">
+                                <span class="tag">HTML</span>
+                                <span class="tag">CSS</span>
+                                <span class="tag">JavaScript</span>
+                            </div>
+                            <!-- <div class="proj-links">
+                                <span class="proj-link-btn disabled" aria-disabled="true">
+                                    Live Site <i class="fas fa-external-link-alt"></i>
+                                </span>
+                            </div> -->
+                        </div>
+                    </article>
+                </div>
+
+            </div>
+
+            <div class="swiper-button-prev proj-prev" aria-label="Previous project"></div>
+            <div class="swiper-button-next proj-next" aria-label="Next project"></div>
+            <div class="swiper-pagination proj-pagination"></div>
+        </div>
+
+    </div>
+</section>
+
+        <!-- ─── CONTACT ─── (NEW: full form + EmailJS) -->
+        <section id="contact" aria-labelledby="contact-heading">
+            <div class="section-wrap">
+                <div class="sec-label">05 — Contact</div>
+                <h2 id="contact-heading" class="sec-title reveal">Let's Talk</h2>
+                <p class="sec-desc reveal delay1">Have a project in mind? I'd love to hear about it. I'm currently open
+                    to freelance &amp; full-time opportunities.</p>
+
+                <div class="contact-grid">
+                    <!-- Info column -->
+                    <div class="contact-info reveal">
+                        <div class="ci-item">
+                            <div class="ci-icon" aria-hidden="true"><i class="fas fa-envelope"></i></div>
+                            <div>
+                                <div class="ci-label">Email</div>
+                                <a href="mailto:nitika.pral@email.com" class="ci-val">nitika.pral@email.com</a>
+                            </div>
+                        </div>
+                        <div class="ci-item">
+                            <div class="ci-icon" aria-hidden="true"><i class="fas fa-phone"></i></div>
+                            <div>
+                                <div class="ci-label">Phone</div>
+                                <a href="tel:+919541614951" class="ci-val">+91 9541614951</a>
+                            </div>
+                        </div>
+                        <div class="ci-item">
+                            <div class="ci-icon" aria-hidden="true"><i class="fas fa-map-marker-alt"></i></div>
+                            <div>
+                                <div class="ci-label">Location</div>
+                                <span class="ci-val">Delhi, India</span>
+                            </div>
+                        </div>
+                        <div class="ci-item">
+                            <div class="ci-icon" aria-hidden="true"><i class="fas fa-clock"></i></div>
+                            <div>
+                                <div class="ci-label">Response Time</div>
+                                <span class="ci-val">Within 24 hours</span>
+                            </div>
+                        </div>
+
+                        <!-- CTA hire me card -->
+                        <div class="hire-me-card">
+                            <div class="hire-me-dot" aria-hidden="true"></div>
+                            <div>
+                                <strong>Open to opportunities</strong>
+                                <p>Freelance, contract, or full-time roles</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Contact form -->
+                    <div class="contact-form-wrap reveal delay2">
+                        <!-- Alert messages -->
+                        <div id="form-success" class="form-alert success" role="alert" aria-live="polite" hidden>
+                            <i class="fas fa-check-circle" aria-hidden="true"></i>
+                            <div>
+                                <strong>Message sent!</strong>
+                                <p>Thanks for reaching out, I'll get back to you within 24 hours.</p>
+                            </div>
+                        </div>
+                        <div id="form-error" class="form-alert error" role="alert" aria-live="polite" hidden>
+                            <i class="fas fa-exclamation-circle" aria-hidden="true"></i>
+                            <div>
+                                <strong>Oops!</strong>
+                                <p>Something went wrong. Please try again or email me directly.</p>
+                            </div>
+                        </div>
+
+                        <form id="cForm" class="contact-form" novalidate aria-label="Contact form" >
+                            <div class="form-row">
+                                <div class="fg">
+                                    <label for="cf-name">Name <span class="req" aria-label="required">*</span></label>
+                                    <input type="text" id="cf-name" name="from_name" placeholder="Your full name"
+                                        required autocomplete="name" aria-required="true">
+                                    <span class="field-err" id="err-name" role="alert" aria-live="polite"></span>
+                                </div>
+                                <div class="fg">
+                                    <label for="cf-email">Email <span class="req" aria-label="required">*</span></label>
+                                    <input type="email" id="cf-email" name="from_email" placeholder="your@email.com"
+                                        required autocomplete="email" aria-required="true">
+                                    <span class="field-err" id="err-email" role="alert" aria-live="polite"></span>
+                                </div>
+                            </div>
+                            <div class="fg">
+                                <label for="cf-subject">Subject</label>
+                                <input type="text" id="cf-subject" name="subject"
+                                    placeholder="Project inquiry, freelance, etc.">
+                            </div>
+                            <div class="fg">
+                                <label for="cf-message">Message <span class="req" aria-label="required">*</span></label>
+                                <textarea id="cf-message" name="message" rows="6"
+                                    placeholder="Tell me about your project or idea…" required
+                                    aria-required="true"></textarea>
+                                <span class="field-err" id="err-message" role="alert" aria-live="polite"></span>
+                            </div>
+                            <button type="submit" class="btn-prim btn-submit" id="submitBtn"
+                                aria-label="Send your message">
+                                <span class="btn-text">Send Message</span>
+                                <i class="fas fa-paper-plane" aria-hidden="true"></i>
+                                <span class="btn-loader" aria-hidden="true"></span>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer role="contentinfo">
+        <div class="footer-left">
+            <div>© 2026 Nitika Pral · Frontend &amp; React Developer</div>
+            <div style="margin-top:.3rem">
+                Designed &amp; built by <a href="https://www.linkedin.com/in/nitika-pral-6a80a22a7/" target="_blank"
+                    rel="noopener noreferrer">Nitika Pral</a>
+            </div>
+        </div>
+        <div class="footer-socials">
+            <a href="https://www.linkedin.com/in/nitika-pral-6a80a22a7/" target="_blank" rel="noopener noreferrer"
+                class="soc-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
+            <a href="https://github.com/Nitikapral" target="_blank" rel="noopener noreferrer" class="soc-link"
+                aria-label="GitHub"><i class="fab fa-github" aria-hidden="true"></i></a>
+            <a href="https://wa.me/919541614951?text=Hi%20Nitika,%20I%20visited%20your%20portfolio" target="_blank"
+                rel="noopener noreferrer" class="soc-link" aria-label="WhatsApp"><i class="fab fa-whatsapp"
+                    aria-hidden="true"></i></a>
+        </div>
+    </footer>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!-- EmailJS -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script src="./assets/js/script.js"></script>
+</body>
+
+</html>
