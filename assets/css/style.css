@@ -1057,8 +1057,7 @@ h1 {
     position: sticky;
     top: 100px;
        overflow-x: auto;
-    white-space: pre-wrap;
-    word-break: break-word;
+  
 }
 
 .ac-line {
@@ -2360,6 +2359,8 @@ body.light .form-alert.success {
     .about-code {
         padding: 1.5rem;
         font-size: .72rem;
+          white-space: pre-wrap;
+    word-break: break-word;
     }
 
     /* Skills */
