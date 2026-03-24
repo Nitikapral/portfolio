@@ -2697,7 +2697,7 @@ body.light .form-alert.success {
     }
 
     .about-stats {
-        grid-template-columns: 1fr 1fr;
+    display: block;
     }
 
     .stat-n {
